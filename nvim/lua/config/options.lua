@@ -1,0 +1,9 @@
+vim.opt.number = true -- Make line numbers default
+vim.opt.relativenumber = true -- set relative numbered lines
+vim.opt.cursorline = true -- highlight the current line
+vim.opt.shiftwidth = 4 -- the number of spaces inserted for each indentation
+vim.opt.tabstop = 4 -- insert n spaces for a tab
+vim.opt.softtabstop = 4 -- number of spaces that a tab counts for while performing editing operations
+vim.opt.expandtab = true -- convert tabs to spaces
+vim.opt.termguicolors = true -- set termguicolors to enable highlight groups
+vim.opt.clipboard = "unnamedplus" -- sync clipboard between OS and Neovim
