@@ -66,7 +66,7 @@ stow -D alacritty
 
 ---
 
-### 📂 Directory Structure
+## 📂 Directory Structure
 ```bash
 ~/.dotfiles
 ├── alacritty/
@@ -83,7 +83,7 @@ Each directory mirrors the structure inside your `$HOME`, which is how GNU Stow 
 
 ---
 
-### 📝 License
+## 📝 License
 
 These dotfiles are open source under the MIT License.
 Feel free to fork, adapt, and share — and remember to `stow responsibly 🪣`.
