@@ -11,43 +11,79 @@
 @define-color wht   #ffffff;
 
 * {
-    font-family: "JetBrainsMono Nerd Font", monospace; 
-    font-size: 13px;
-    font-weight: bold;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 12px;
+  font-weight: bold;
+  border: none;
+  box-shadow: none;
+  min-height: 0;
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    color: #ffffff;
+  background: transparent;
+  color: @fg;
 }
 
-window#waybar.hidden {
-    opacity: 0.2;
+/* --- Containers --- */
+.modules-left,
+.modules-center,
+.modules-right {
+  background: transparent;
+  border-radius: 12px;
+  padding: 1px 3px;
+  margin: 2px 5px;
+}
+
+/* --- Workspaces --- */
+#workspaces {
+  background: transparent;
+  padding: 0;
+  margin: 0;
 }
 
 #workspaces button {
-    padding: 0 6px;
-    color: @cyn;
-    background: transparent;
-    border-bottom: 3px solid @bg;
+  border-radius: 14px;
+  padding: 2px 6px;
+  margin: 0 1px;
+  min-width: 18px;
+  transition: all 0.25s ease;
+  border: none;
 }
+
+/* Active workspace: cyan bubble, white number */
 #workspaces button.active {
-    color: @cyn;
-    border-bottom: 3px solid @mag;
+  background: @cyn;
+  color: @wht;
 }
+
+/* Occupied workspace: cyan outline, cyan number */
+#workspaces button.occupied {
+  background: transparent;
+  color: @cyn;
+  border: 2px solid @cyn;
+}
+
+/* Empty workspace: transparent bubble, no number */
 #workspaces button.empty {
-    color: @wht;
-}
-#workspaces button.empty.active {
-    color: @cyn;
-    border-bottom: 3px solid @mag;
+  background: rgba(26, 27, 38, 0.25);
+  color: transparent;
+  border: none;
 }
 
-#battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
+/* Hover effect */
+#workspaces button:hover {
+  background: rgba(13, 185, 215, 0.25);
+  color: @wht;
 }
 
+/* --- Window title --- */
+#window {
+  color: @wht;
+  font-weight: 600;
+  padding: 0 8px;
+}
+
+/* --- Modules --- */
 #clock,
 #battery,
 #cpu,
@@ -55,42 +91,41 @@ window#waybar.hidden {
 #disk,
 #temperature,
 #network,
-#tray {
-    padding: 0 8px;
-    color: @wht; 
+#tray,
+#custom-power {
+  border-radius: 14px;
+  padding: 2px 6px;
+  margin: 0 1px;
+  background: rgba(30, 30, 46, 0.25);
+  transition: all 0.25s ease;
 }
 
-#clock {
-    color: @cyn;
-    border-bottom: 4px solid @cyn;
+/* Hover effect for modules */
+#clock:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#disk:hover,
+#temperature:hover,
+#network:hover,
+#tray:hover,
+#custom-power:hover {
+  background: rgba(122, 162, 247, 0.2);
 }
 
-#battery {
-    color: @mag;
-    border-bottom: 4px solid @mag;
-}
+/* --- Color Accents --- */
+#clock        { color: @cyn; }
+#battery      { color: @mag; }
+#temperature  { color: @red; }
+#disk         { color: @ylw; }
+#memory       { color: @mag; }
+#cpu          { color: @grn; }
+#network      { color: @blu; }
+#custom-power { color: @red; }
 
-#temperature {
-    color: @red;
-    border-bottom: 4px solid @red;
-}
-
-#disk {
-    color: @ylw;
-    border-bottom: 4px solid @ylw;
-}
-
-#memory {
-    color: @mag;
-    border-bottom: 4px solid @mag;
-}
-
-#cpu {
-    color: @grn;
-    border-bottom: 4px solid @grn;
-}
-
-#network {
-    color: @blu;
-    border-bottom: 4px solid @blu;
+/* --- Battery: turns green when plugged or charging --- */
+#battery.charging,
+#battery.plugged {
+  color: @wht;
+  background: @grn;
 }
