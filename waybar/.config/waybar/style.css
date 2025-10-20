@@ -50,10 +50,24 @@ window#waybar {
   border: none;
 }
 
-/* Active workspace: cyan bubble, white number */
+/* Active workspace (with or without windows): cyan bubble + white number */
 #workspaces button.active {
   background: @cyn;
   color: @wht;
+  border: none;  
+  border-radius: 10px;
+  padding: 3px 18px;
+  margin: 1px 0;
+}
+
+/* Active + empty (override .empty transparency) */
+#workspaces button.active.empty {
+  background: @cyn;
+  color: @wht;
+  border: none; 
+  border-radius: 10px;
+  padding: 3px 18px;
+  margin: 1px 0;
 }
 
 /* Occupied workspace: cyan outline, cyan number */
@@ -63,13 +77,12 @@ window#waybar {
   border: 2px solid @cyn;
 }
 
-/* Empty workspace: transparent bubble, no number */
-#workspaces button.empty {
+/* Empty workspace: transparent circle, no number */
+#workspaces button.empty:not(.active) {
   background: rgba(26, 27, 38, 0.25);
   color: transparent;
   border: none;
 }
-
 /* Hover effect */
 #workspaces button:hover {
   background: rgba(13, 185, 215, 0.25);
