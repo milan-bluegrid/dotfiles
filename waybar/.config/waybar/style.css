@@ -105,7 +105,8 @@ window#waybar {
 #temperature,
 #network,
 #tray,
-#custom-power {
+#custom-power,
+#custom-updates {
   border-radius: 14px;
   padding: 2px 6px;
   margin: 0 1px;
@@ -122,7 +123,8 @@ window#waybar {
 #temperature:hover,
 #network:hover,
 #tray:hover,
-#custom-power:hover {
+#custom-power:hover,
+#custom-updates:hover {
   background: rgba(122, 162, 247, 0.2);
 }
 
@@ -135,6 +137,7 @@ window#waybar {
 #cpu          { color: @grn; }
 #network      { color: @blu; }
 #custom-power { color: @red; }
+#custom-updates { color: @cyn; }
 
 /* --- Battery: turns green when plugged or charging --- */
 #battery.charging,

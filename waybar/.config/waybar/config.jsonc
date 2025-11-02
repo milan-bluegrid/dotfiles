@@ -12,6 +12,7 @@
     "modules-center": [
     ],
     "modules-right": [
+        "custom/updates",
         "network",
         "cpu",
         "memory",
@@ -117,5 +118,14 @@
         "format" : "⏻ ",
 	"tooltip": false,
 	"on-click": "~/.config/waybar/scripts/powermenu.sh"
+    },
+    "custom/updates": {
+    "format": "{} ",
+    "interval": 3600,                                  // check every hour
+    "exec": "(checkupdates; pacman -Qm | yay -Qum) | wc -l", // count repo + AUR updates
+    "exec-if": "exit 0",                               // always run
+    "on-click": "kitty sh -c 'yay; echo \"✅ All done! Press Enter to close...\"; read'; pkill -SIGRTMIN+8 waybar",
+    "signal": 8,
+    "tooltip": false
     }
 }
