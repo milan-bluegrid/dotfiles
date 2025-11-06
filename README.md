@@ -92,7 +92,7 @@ Each directory mirrors your `$HOME` layout — that’s how **GNU Stow** knows w
 
 Licensed under the **MIT License**.
 
-Feel free to fork, adapt, and share — and remember to *stow responsibly 🪣*.
+Feel free to fork, adapt, and share — and remember to *stow responsibly* 🪣.
 
 ---
 
