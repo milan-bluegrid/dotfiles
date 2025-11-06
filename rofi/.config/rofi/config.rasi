@@ -1,0 +1,181 @@
+/* ---- Imports ---- */
+@import "~/.config/rofi/colors.rasi"
+@import "~/.config/rofi/wallpaper.rasi"
+
+/* ---- Configuration ---- */
+configuration {
+    modi:                       "drun,filebrowser,window,run";
+    font:                       "JetBrainsMono Nerd Font 11";
+    show-icons:                 true;
+    display-drun:               " ";
+    display-run:                " ";
+    display-filebrowser:        "";
+    display-window:             "";
+    drun-display-format:        "{name}";
+    hover-select:               false;
+    scroll-method:              1;
+    me-select-entry:            "";
+    me-accept-entry:            "MousePrimary";
+    window-format:              "{w} · {c} · {t}";
+}
+
+/* ---- Variables ---- */
+* {
+    border-width: 2px;
+    border-radius: 15px;
+}
+
+/* ---- Window ---- */
+window {
+    height:            35em;
+    width:             58em;
+    transparency:      "real";
+    padding:           0;
+    border:            0;
+    border-color:      @primary;
+    border-radius:     @border-radius;
+    background-color:  rgba(20,20,30,0.85);
+}
+
+/* ---- Layout ---- */
+mainbox {
+    orientation:       horizontal;
+    children:          [ "wallbox", "listbox" ];
+    background-color:  transparent;
+}
+
+/* ---- Left section (wallpaper) ---- */
+wallbox {
+    background-image:  @current-image;
+    background-color:  transparent;   /* subtle dark overlay on image */
+    children:          [ "inputbar", "dummy", "mode-switcher" ];
+    padding:           3em 2em;
+    orientation:       vertical;
+    border-radius:     15px 0 0 15px;
+    border:            0;
+}
+
+dummy {
+    background-color:  transparent;
+}
+
+/* ---- Search input ---- */
+inputbar {
+    margin:            0 0 2em 0;
+    children:          [ "textbox-prompt-colon", "entry" ];
+    border-radius:     1em;
+    background-color:  @surface;
+}
+
+textbox-prompt-colon {
+    str:               "  ";
+    text-color:        @primary;
+    background-color:  transparent;
+    padding:           1em 0.3em 0 0;
+}
+
+entry {
+    padding:           1em;
+    text-color:        @on-surface;
+    placeholder:       "Search";
+    background-color:  transparent;
+    placeholder-color: @on-surface;
+}
+
+/* ---- Mode switcher ---- */
+mode-switcher {
+    orientation:       horizontal;
+    spacing:           1em;
+    background-color:  transparent;
+}
+
+button {
+    padding:           0.6em 1em;
+    border-radius:     1em;
+    background-color:  @surface;
+    text-color:        @on-surface;
+}
+button selected {
+    background-color:  @primary;
+    text-color:        #ffffff;
+}
+
+/* ---- Right section ---- */
+listbox {
+    margin:            -2px 0 0 0;
+    padding:           2em;
+    background-color:  transparent;   /* fully transparent */
+    border-radius:     0 15px 15px 0;
+    border:            0;
+    border-color:      @primary;
+    clip-to-border:    true;
+    children:          [ "listview" ];
+}
+
+listview {
+    padding:           0;
+    spacing:           0.7em;
+    scrollbar:         false;
+    layout:            vertical;
+    background-color:  transparent;
+}
+
+/* ---- Elements ---- */
+element {
+    padding:           0.8em 1.2em;
+    border-radius:     1em;
+    background-color:  @surface;
+    text-color:        @on-surface;
+    border:            1px;
+    border-color:      rgba(255,255,255,0.03);
+}
+
+/* Make ALL element states look identical */
+element normal.normal,
+element normal.active,
+element normal.urgent,
+element alternate.normal,
+element alternate.active,
+element alternate.urgent,
+element selected.urgent,
+element selected.active,
+element selected.normal {
+    background-color:  @surface;
+    text-color:        @on-surface;
+}
+
+/* Highlight selected item */
+element selected.normal {
+    background-color:  rgba(137,180,250,0.25);
+    text-color:        @primary;
+    border:            2px;
+    border-color:      @primary;
+}
+
+element selected.active, element selected.urgent {
+    background-color:  rgba(137,180,250,0.35);
+    text-color:        #ffffff;
+}
+    
+element-icon {
+    size:              1.6em;
+    margin:            0 0.8em 0 0.4em;
+}
+
+element-text {
+    vertical-align:    0.5;
+    horizontal-align:  0.0;
+}
+
+/* ---- Error message ---- */
+error-message {
+    text-color:        @on-surface;
+    background-color:  @background;
+    children:          [ "textbox" ];
+}
+
+textbox {
+    vertical-align:    0.5;
+    horizontal-align:  0.5;
+}
+

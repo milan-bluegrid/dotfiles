@@ -1,0 +1,7 @@
+* {
+  background: #1e1e2ee0;
+  surface: #2b2b3af0;
+  on-surface: #d7dae0;
+  primary: #89b4fa;
+  border-color: #89b4fa;
+}
