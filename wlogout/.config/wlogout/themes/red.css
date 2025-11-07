@@ -1,0 +1,43 @@
+window {
+    background-color: rgba(30, 30, 46, 0.90);
+}
+
+button {
+    border-color: #f38ba8;
+    color: #f38ba8;
+    background-color: #181825;
+}
+
+button:hover {
+    background-color: rgb(48, 50, 66);
+    box-shadow: 0 0 10px 2px rgba(243, 139, 168, 0.4);
+}
+
+button:focus,
+button:active {
+    box-shadow: 0 0 10px 2px rgba(243, 139, 168, 0.6);
+}
+
+label {
+    color: #f38ba8;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+#lock {
+    background-image: url("/home/milan/.config/wlogout/icons/red/lock.svg");
+}
+#logout {
+    background-image: url("/home/milan/.config/wlogout/icons/red/logout.svg");
+}
+#suspend {
+    background-image: url("/home/milan/.config/wlogout/icons/red/suspend.svg");
+}
+#hibernate {
+    background-image: url("/home/milan/.config/wlogout/icons/red/hibernate.svg");
+}
+#shutdown {
+    background-image: url("/home/milan/.config/wlogout/icons/red/shutdown.svg");
+}
+#reboot {
+    background-image: url("/home/milan/.config/wlogout/icons/red/reboot.svg");
+}
