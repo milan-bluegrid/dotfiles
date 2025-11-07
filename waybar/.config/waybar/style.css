@@ -130,7 +130,7 @@ window#waybar {
 
 /* --- Color Accents --- */
 #clock        { color: @cyn; }
-#battery      { color: @mag; }
+#battery      { color: @blk; }
 #temperature  { color: @red; }
 #disk         { color: @ylw; }
 #memory       { color: @mag; }
