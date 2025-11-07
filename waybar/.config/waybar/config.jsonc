@@ -117,7 +117,7 @@
     "custom/power": {
         "format" : "⏻ ",
 	"tooltip": false,
-	"on-click": "~/.config/waybar/scripts/powermenu.sh"
+	"on-click": "wlogout"
     },
     "custom/updates": {
     "format": "{} ",
